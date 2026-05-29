@@ -53,7 +53,8 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "nord/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xfce4-terminal"
+--terminal = "xfce4-terminal"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -127,7 +128,9 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+--mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock(" %a %b %d, %I:%M %p ")
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
